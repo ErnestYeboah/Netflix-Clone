@@ -5,8 +5,7 @@ import { useNetflixContext } from "../../context/NetflixContext";
 import { logOut } from "./firebase";
 
 export default function ProfileModal() {
-  const { showProfileModal, setShowProfileModal, setShowLoginModal } =
-    useNetflixContext();
+  const { showProfileModal, setShowProfileModal } = useNetflixContext();
 
   return (
     <div
