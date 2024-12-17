@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Abel&family=Julee&family=Big+Shoulders+Inline+Text&family=Bellefair&family=Cantata+One&family=Cormorant+Upright&family=Akaya+Kanadaka&family=Alice&family=Big+Shoulders+Stencil+Display&family=Corben&family=Croissant+One&family=Dynalight&family=Fira+Sans&family=Open+Sans&family=Explora&Jim+Nightshade&family=Medula+One&family=Satoshi&family=Inter&family=Mulish&family=Metal+Mania&family=Nova+Cut&family=UnifrakturMaguntia&family=Coda&family=Charm&family=Cookie&family=Felipa&family=Delius&family=Alex+Brush&family=Arsenal&family=Antonio:wght@100..700&family=Arapey:ital@0;1&family=Aref+Ruqaa:wght@400;700&family=Asul:wght@400;700&family=Bebas+Neue&family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Figtree&family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Cinzel+Decorative&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster+Two&family=Amita&family=Berkshire+Swash&family=Alfa+Slab+One&family=Orbitron&family=Abril+Fatface&family=Great+Vibes&family=Pacifico&family=Whisper&family=Satisfy&family=Dorsa&family=Exo&family=Farro&family=Montserrat+Alternates&family=Advent+Pro&family=Gotu&family=Jua&family=Laila&family=Notable&family=Proza+Libre&family=Marvel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Emoji:wght@300..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Pattaya&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rum+Raisin&family=Sarpanch&family=Stick+No+Bills&family=Ubuntu&family=ZCOOL+XiaoWei&family=Rouge+Script&family=Quintessential&family=Roboto:ital,wght@0,400;0,700;1,300;1,400&display=swap");
+
+:root {
+  --accent-clr: red;
+  --primary-clr: black;
+  --light-clr: white;
+  --padding: 1rem;
+  --accent-clr-2: royalblue;
+  --fast: 300ms;
+  --smooth: 1000ms;
+  --padding-inline: 6cqi;
+  --gap: 1rem;
+
+  font-family: Poppins;
+}
+
+body {
+  background-color: var(--primary-clr);
+  overflow-x: clip;
+}
+
+nav {
+  height: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-block: 2rem;
+  position: relative;
+
+  & img {
+    width: 120px;
+    height: inherit;
+  }
+
+  & a {
+    color: var(--light-clr);
+  }
+
+  .nav__links {
+    display: flex;
+    font-size: 1.2rem;
+    gap: 1rem;
+    font-weight: 300;
+
+    & a {
+      font-weight: inherit;
+    }
+  }
+
+  .nav__icons {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .search__icon {
+    color: var(--light-clr);
+  }
+
+  .profile__btn {
+    background-color: var(--accent-clr-2);
+    color: var(--light-clr);
+    border-radius: 100vw;
+  }
+}
+
+.profile__modal {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  min-height: 40vh;
+  background-color: var(--light-clr);
+  border-radius: 1rem;
+  width: 40%;
+  padding: var(--padding);
+  text-align: center;
+  translate: 100% 0;
+  transition: translate var(--fast);
+
+  &.active {
+    translate: 0 0;
+  }
+
+  .title__sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & p {
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .close__btn {
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+
+  .profile__pic {
+    background-color: var(--accent-clr-2);
+    width: 100px;
+    aspect-ratio: 1;
+    border-radius: 100vw;
+    text-align: center;
+    align-content: center;
+    margin: 0.5rem auto;
+    color: var(--light-clr);
+    font-size: 1.3rem;
+    font-weight: normal;
+  }
+
+  .logout {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    margin-top: var(--padding);
+    align-items: center;
+  }
+}
+
+.hero__sec {
+  background-image: url("/images/Tommy.jpg");
+  background-size: cover;
+  background-position: top;
+  min-height: 90vh;
+  padding-top: var(--padding);
+  align-content: center;
+  border-image: fill 1 linear-gradient(rgba(0 0 0 / 0.7), transparent);
+
+  .hero__text {
+    padding-inline: var(--padding-inline);
+    margin-bottom: 2rem;
+
+    > * {
+      margin-bottom: var(--padding);
+    }
+  }
+
+  & h1 {
+    font-size: clamp(2.4rem, 5vw, 3rem);
+    color: rgb(223, 18, 18);
+    line-height: 0.8;
+  }
+
+  & p {
+    line-height: 1.5;
+  }
+
+  .hero__btns {
+    display: flex;
+    gap: var(--gap);
+
+    > :last-child {
+      --btn-bg: rgba(211, 211, 211, 0.712);
+      --btn-text-clr: var(--primary-clr);
+    }
+  }
+}
+
+.movie__cards {
+  min-height: 30vh;
+  position: relative;
+  margin-inline-start: var(--padding-inline);
+  margin-block-end: var(--gap);
+  color: var(--light-clr);
+
+  & h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+    font-size: 3rem;
+    top: 50%;
+    padding-inline-end: var(--padding);
+
+    > * {
+      color: var(--light-clr);
+      background-color: var(--accent-clr);
+      border-radius: 100vw;
+      cursor: pointer;
+      transition: var(--fast);
+
+      &:hover {
+        background-color: hsla(from var(--accent-clr) h s l / 0.3);
+      }
+    }
+  }
+
+  .movie__slider {
+    display: flex;
+    gap: var(--gap);
+    transition: translate var(--fast);
+
+    .card {
+      background-color: var(--primary-clr);
+      min-width: 200px;
+      cursor: pointer;
+
+      & p {
+        padding: var(--padding);
+      }
+    }
+  }
+}
+
+.arrow__back {
+  color: var(--light-clr);
+  background-color: var(--accent-clr);
+  font-size: 2rem;
+  margin: var(--gap);
+  cursor: pointer;
+  border-radius: 100vw;
+}
+
+iframe {
+  min-height: 80vh;
+  width: 100%;
+}
+
+.login__modal-wrapper {
+  background-image: url("/images/netflix-bg.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  align-items: start;
+  justify-items: center;
+  align-content: center;
+  background-color: rgba(0 0 0 / 0.8);
+  background-blend-mode: overlay;
+
+  .login__modal {
+    width: min(500px, 80%);
+    border-radius: 1rem;
+    background-color: var(--primary-clr);
+    padding: var(--padding) 3cqi;
+    color: var(--light-clr);
+
+    > * {
+      margin-bottom: var(--padding);
+    }
+
+    & input:not([type="checkbox"]) {
+      display: block;
+      min-width: 100%;
+      padding: 1rem;
+      border: none;
+      margin-bottom: var(--gap);
+      font-size: 1.1rem;
+    }
+
+    .checkbox__sec {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    & button {
+      background-color: var(--accent-clr);
+      width: 100%;
+      margin-top: var(--gap);
+    }
+  }
+}
